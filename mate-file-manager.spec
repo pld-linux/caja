@@ -5,7 +5,7 @@
 Summary:	File manager for MATE
 Name:		mate-file-manager
 Version:	1.5.2
-Release:	0.3
+Release:	0.4
 License:	GPLv2+ and LGPLv2+
 Group:		X11/Applications
 URL:		http://mate-desktop.org
@@ -41,6 +41,8 @@ Requires:	shared-mime-info
 # the main binary links against libcaja-extension.so
 # don't depend on soname, rather on exact version
 Requires:	%{name}-extensions = %{version}-%{release}
+Suggests:	mate-backgrounds
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Caja (mate-file-manager) is the file manager and graphical shell for
