@@ -8,9 +8,9 @@ Version:	1.5.2
 Release:	0.4
 License:	GPLv2+ and LGPLv2+
 Group:		X11/Applications
-URL:		http://mate-desktop.org
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
 # Source0-md5:	99ad04fe0460c7267803e88f22966e67
+URL:		http://mate-desktop.org/
 BuildRequires:	desktop-file-utils
 BuildRequires:	mate-common
 BuildRequires:	mate-desktop-devel
@@ -28,6 +28,8 @@ BuildRequires:	pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(unique-1.0)
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	filesystem
 Requires:	gamin
 Requires:	glib2 >= 1:2.26.0
