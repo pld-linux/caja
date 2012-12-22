@@ -58,7 +58,6 @@ desktop.
 Summary:	Mate-file-manager extensions library
 License:	LGPL v2+
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
 
 %description extensions
 This package provides the libraries used by caja extensions.
@@ -67,7 +66,7 @@ This package provides the libraries used by caja extensions.
 Summary:	Support for developing mate-file-manager extensions
 License:	LGPL v2+
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-extensions = %{version}-%{release}
 
 %description devel
 This package provides libraries and header files needed for developing
