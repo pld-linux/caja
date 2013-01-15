@@ -1,35 +1,38 @@
 # TODO
 # -extensions not optional:
 # mate-file-manager-1.5.2-0.2.i686: required "libcaja-extension.so.1" is provided by the following packages:
+#
+# Conditional build:
+%bcond_without	apidocs		# disable gtk-doc
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
 Version:	1.5.2
 Release:	0.4
-License:	GPLv2+ and LGPLv2+
+License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
+Source0:	http://pub.caja.org/releases/1.5/%{name}-%{version}.tar.xz
 # Source0-md5:	99ad04fe0460c7267803e88f22966e67
-URL:		http://mate-desktop.org/
+URL:		http://caja.org/
+BuildRequires:	cairo-gobject-devel
+BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
+BuildRequires:	exempi-devel
+BuildRequires:	gobject-introspection-devel
+BuildRequires:	gsettings-desktop-schemas-devel
+BuildRequires:	libexif-devel
+BuildRequires:	libselinux-devel
+BuildRequires:	libunique-devel
+BuildRequires:	libxml2-devel
 BuildRequires:	mate-common
 BuildRequires:	mate-desktop-devel
-BuildRequires:	mate-desktop-libs
-BuildRequires:	mate-doc-utils
+%{?with_apidocs:BuildRequires:	mate-doc-utils >= 1.1.0}
 BuildRequires:	pangox-compat-devel
-BuildRequires:	pkgconfig(cairo-gobject)
-BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(exempi-2.0)
-BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(gsettings-desktop-schemas)
-BuildRequires:	pkgconfig(libexif)
-BuildRequires:	pkgconfig(libselinux)
-BuildRequires:	pkgconfig(libstartup-notification-1.0)
-BuildRequires:	pkgconfig(libxml-2.0)
-BuildRequires:	pkgconfig(sm)
-BuildRequires:	pkgconfig(unique-1.0)
+BuildRequires:	startup-notification-devel
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xz
+Requires:	%{name}-extensions = %{version}-%{release}
 Requires:	filesystem
 Requires:	gamin
 Requires:	glib2 >= 1:2.26.0
@@ -40,9 +43,6 @@ Requires:	hicolor-icon-theme
 Requires:	mate-icon-theme
 #Requires:	redhat-menus
 Requires:	shared-mime-info
-# the main binary links against libcaja-extension.so
-# don't depend on soname, rather on exact version
-Requires:	%{name}-extensions = %{version}-%{release}
 Suggests:	mate-backgrounds
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -72,6 +72,18 @@ Requires:	%{name}-extensions = %{version}-%{release}
 This package provides libraries and header files needed for developing
 caja extensions.
 
+%package apidocs
+Summary:	libcaja API documentation
+Summary(pl.UTF-8):	Dokumentacja API libcaja
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+libcaja API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API libcaja.
+
 %prep
 %setup -q
 
@@ -86,10 +98,6 @@ NOCONFIGURE=1 ./autogen.sh
 	--with-gnu-ld \
 	--with-x \
 	--with-gtk=2.0
-
-# drop unneeded direct library deps with --as-needed
-# libtool doesn't make this easy, so we do it the hard way
-#sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' libtool
 
 %{__make} \
 	V=1
@@ -163,5 +171,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/libcaja-extension.pc
 %{_datadir}/gir-1.0/Caja-2.0.gir
 
-# apidoc
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
 %{_gtkdocdir}/libcaja-extension
+%endif
