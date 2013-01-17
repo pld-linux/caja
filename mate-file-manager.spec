@@ -8,7 +8,7 @@
 Summary:	File manager for MATE
 Name:		mate-file-manager
 Version:	1.5.2
-Release:	0.4
+Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.caja.org/releases/1.5/%{name}-%{version}.tar.xz
@@ -19,7 +19,6 @@ BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	exempi-devel
 BuildRequires:	gobject-introspection-devel
-BuildRequires:	gsettings-desktop-schemas-devel
 BuildRequires:	libexif-devel
 BuildRequires:	libselinux-devel
 BuildRequires:	libunique-devel
