@@ -7,13 +7,13 @@
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
-Version:	1.5.2
+Version:	1.5.3
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.caja.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	99ad04fe0460c7267803e88f22966e67
-URL:		http://caja.org/
+Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
+# Source0-md5:	96ad0936a69665177903c456d5972cfd
+URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
@@ -109,8 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 
 find $RPM_BUILD_ROOT -name '*.la' |xargs rm
 
-#%{__rm} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/icon-theme.cache
-#%{__rm} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/.icon-theme.cache
+# mate < 1.5 did not exist in pld, avoid dependency on mate-conf
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/caja.convert
 
 install -d $RPM_BUILD_ROOT%{_libdir}/caja/extensions-2.0
 
