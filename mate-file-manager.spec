@@ -7,12 +7,12 @@
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
-Version:	1.5.3
+Version:	1.5.4
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	96ad0936a69665177903c456d5972cfd
+# Source0-md5:	d05bfd20a151bc444f223321f78c451e
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	dbus-glib-devel
@@ -140,11 +140,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files  -f caja.lang
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING COPYING-DOCS COPYING.LIB NEWS README
+%doc AUTHORS NEWS README
 %attr(755,root,root) %{_bindir}/caja
 %attr(755,root,root) %{_bindir}/caja-autorun-software
 %attr(755,root,root) %{_bindir}/caja-connect-server
 %attr(755,root,root) %{_bindir}/caja-file-management-properties
+%{_mandir}/man1/caja*.1.*
 %{_datadir}/caja
 %dir %{_libdir}/caja
 %dir %{_libdir}/caja/extensions-2.0
@@ -153,7 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/apps/caja.png
 %{_iconsdir}/hicolor/scalable/apps/caja.svg
 %{_datadir}/glib-2.0/schemas/org.mate.*.gschema.xml
-%{_mandir}/man1/caja*.1.*
+%{_datadir}/dbus-1/services/org.mate.freedesktop.FileManager1.service
 %{_libexecdir}/caja-convert-metadata
 %{_datadir}/mime/packages/caja.xml
 
