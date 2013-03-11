@@ -7,17 +7,18 @@
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
-Version:	1.5.4
+Version:	1.5.5
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	d05bfd20a151bc444f223321f78c451e
+# Source0-md5:	c62dd616c55edcec268de8e78c202ed6
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	exempi-devel
+BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	libexif-devel
 BuildRequires:	libselinux-devel
@@ -34,7 +35,7 @@ BuildRequires:	xz
 Requires:	%{name}-extensions = %{version}-%{release}
 Requires:	filesystem
 Requires:	gamin
-Requires:	glib2 >= 1:2.26.0
+Requires:	glib2 >= 1:2.28.0
 Requires:	gsettings-desktop-schemas
 Requires:	gtk-update-icon-cache
 Requires:	gvfs
