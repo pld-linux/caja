@@ -7,12 +7,12 @@
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	bd668ecdfb3de2616bb08420f38df17c
+# Source0-md5:	f6edef1f9ea988fa5ee42ba7beeb29b3
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	dbus-glib-devel
