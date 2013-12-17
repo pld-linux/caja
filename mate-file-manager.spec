@@ -7,12 +7,12 @@
 
 Summary:	File manager for MATE
 Name:		mate-file-manager
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	69a3c8abc36a9c7333b3ce370cea2bdb
+# Source0-md5:	3925e589ef3365a4d59ce8cca6db946e
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	dbus-glib-devel
@@ -159,9 +159,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/caja/
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/apps/caja.png
+%{_iconsdir}/hicolor/*/emblems/emblem-note.png
 %{_iconsdir}/hicolor/scalable/apps/caja.svg
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/icons
 %{_datadir}/glib-2.0/schemas/org.mate.*.gschema.xml
 %{_datadir}/dbus-1/services/org.mate.freedesktop.FileManager1.service
 %{_libexecdir}/caja-convert-metadata
