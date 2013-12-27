@@ -7,7 +7,7 @@ Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		mate-file-manager
 Version:	1.6.3
-Release:	2
+Release:	3
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -165,7 +165,10 @@ desktop-file-install \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
+# not supported by glibc yet
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/io
+# update naming convention
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{sr@ije,sr@ijekavian}
 
 %find_lang caja
 
