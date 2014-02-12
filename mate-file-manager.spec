@@ -6,12 +6,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		mate-file-manager
-Version:	1.6.3
-Release:	3
+Version:	1.6.4
+Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	3925e589ef3365a4d59ce8cca6db946e
+# Source0-md5:	da21d4c8d99510a42e7c9b9f9a4366c3
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -196,6 +196,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/caja-connect-server
 %attr(755,root,root) %{_bindir}/caja-file-management-properties
 %{_mandir}/man1/caja.1*
+%{_mandir}/man1/caja-autorun-software.1*
 %{_mandir}/man1/caja-connect-server.1*
 %{_mandir}/man1/caja-file-management-properties.1*
 %attr(755,root,root) %{_libexecdir}/caja-convert-metadata
