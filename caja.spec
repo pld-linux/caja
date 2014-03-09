@@ -5,13 +5,13 @@
 
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
-Name:		mate-file-manager
-Version:	1.6.4
+Name:		caja
+Version:	1.8.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	da21d4c8d99510a42e7c9b9f9a4366c3
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	f0f93c23c7b666372441e9ddb390c743
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -31,8 +31,7 @@ BuildRequires:	libselinux-devel
 %{?with_gtk3:BuildRequires:	libunique3-devel >= 3.0}
 BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	mate-common
-BuildRequires:	mate-desktop-devel >= 1.5.0
-%{?with_apidocs:BuildRequires:	mate-doc-utils >= 1.1.0}
+BuildRequires:	mate-desktop-devel >= 1.7.1
 BuildRequires:	pango-devel >= 1:1.1.2
 BuildRequires:	pangox-compat-devel
 BuildRequires:	perl-base
@@ -56,33 +55,35 @@ Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
 Suggests:	mate-backgrounds
+Obsoletes:	mate-file-manager
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Caja (mate-file-manager) is the file manager and graphical shell for
-the MATE desktop, that makes it easy to manage your files and the rest
-of your system. It allows to browse directories on local and remote
-file systems, preview files and launch applications associated with
-them. It is also responsible for handling the icons on the MATE
-desktop. Caja is a fork of Nautilus from GNOME.
+Caja is the file manager and graphical shell for the MATE desktop,
+that makes it easy to manage your files and the rest of your system.
+It allows to browse directories on local and remote file systems,
+preview files and launch applications associated with them. It is also
+responsible for handling the icons on the MATE desktop. Caja is a fork
+of Nautilus from GNOME.
 
 %description -l pl.UTF-8
-Caja (mate-file-manager) to zarządca plików i graficzna powłoka dla
-środowiska graficznego MATE. Ułatwia zarządzanie plikami i resztą
-systemu. Umożliwia przeglądanie katalogów na lokalnych i zdalnych
-systemach plików, podgląd plików oraz uruchamianie aplikacji
-powiązanych z nimi. Odpowiada także za obsługę ikon w środowisku MATE.
-Caja to odgałęzienie Nautilusa z GNOME.
+Caja to zarządca plików i graficzna powłoka dla środowiska graficznego
+MATE. Ułatwia zarządzanie plikami i resztą systemu. Umożliwia
+przeglądanie katalogów na lokalnych i zdalnych systemach plików,
+podgląd plików oraz uruchamianie aplikacji powiązanych z nimi.
+Odpowiada także za obsługę ikon w środowisku MATE. Caja to
+odgałęzienie Nautilusa z GNOME.
 
 %package libs
-Summary:	Library for mate-file-manager extensions
-Summary(pl.UTF-8):	Biblioteka dla rozszerzeń mate-file-managera
+Summary:	Library for caja extensions
+Summary(pl.UTF-8):	Biblioteka dla rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	glib2 >= 1:2.28.0
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
 Obsoletes:	mate-file-manager-extensions
+Obsoletes:	mate-file-manager-libs
 
 %description libs
 This package provides the library used by Caja view extensions.
@@ -92,14 +93,15 @@ Ten pakiet dostarcza bibliotekę używaną przez rozszerzenia widoku
 zarządcy plików Caja.
 
 %package devel
-Summary:	Support for developing mate-file-manager extensions
-Summary(pl.UTF-8):	Pliki do tworzenia rozszerzeń mate-file-managera
+Summary:	Support for developing caja extensions
+Summary(pl.UTF-8):	Pliki do tworzenia rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.28.0
 %{!?with_gtk3:Requires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3-devel >= 3.0.0}
+Obsoletes:	mate-file-manager-devel
 
 %description devel
 This package provides the header files needed for developing Caja
@@ -114,6 +116,7 @@ Summary:	libcaja-extension API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libcaja-extension
 Group:		Documentation
 Requires:	gtk-doc-common
+Obsoletes:	mate-file-manager-apidocs
 
 %description apidocs
 libcaja-extension API documentation.
@@ -150,6 +153,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/lib*.la
