@@ -7,7 +7,7 @@ Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
 Version:	1.8.0
-Release:	1
+Release:	2
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
@@ -54,6 +54,14 @@ Requires:	mate-desktop >= 1.5.0
 Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
+Suggests:	caja-extension-atril
+Suggests:	caja-extension-engrampa
+Suggests:	caja-extension-gksu
+Suggests:	caja-extension-image-converter
+Suggests:	caja-extension-open-terminal
+Suggests:	caja-extension-sendto
+Suggests:	caja-extension-share
+Suggests:	caja-extension-shares
 Suggests:	mate-backgrounds
 Obsoletes:	mate-file-manager
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
