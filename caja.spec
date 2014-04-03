@@ -7,7 +7,7 @@ Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
 Version:	1.8.0
-Release:	2
+Release:	3
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
@@ -125,6 +125,9 @@ Summary(pl.UTF-8):	Dokumentacja API biblioteki libcaja-extension
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	mate-file-manager-apidocs
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 libcaja-extension API documentation.
