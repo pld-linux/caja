@@ -50,7 +50,7 @@ Requires:	gvfs
 Requires:	hicolor-icon-theme
 Requires:	libexif >= 0.5.12
 Requires:	libxml2 >= 2.4.7
-Requires:	mate-desktop >= 1.5.0
+Requires:	mate-desktop >= 1.7.1
 Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
