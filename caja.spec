@@ -18,7 +18,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	exempi-devel >= 1.99.5
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
