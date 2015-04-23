@@ -6,12 +6,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.8.2
-Release:	2
+Version:	1.10.0
+Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	03096b8b6aaaaa081582dde31b129b15
+Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-%{version}.tar.xz
+# Source0-md5:	b1f563d9db885112f15ae312b471dc5e
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -19,21 +19,20 @@ BuildRequires:	cairo-gobject-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	exempi-devel >= 1.99.5
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.28.0
+BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.40.1
-BuildRequires:	libexif-devel >= 0.5.12
+BuildRequires:	libexif-devel >= 0.6.14
 BuildRequires:	libselinux-devel
 %{!?with_gtk3:BuildRequires:	libunique-devel >= 1.0}
 %{?with_gtk3:BuildRequires:	libunique3-devel >= 3.0}
 BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	mate-common
-BuildRequires:	mate-desktop-devel >= 1.7.1
+BuildRequires:	mate-desktop-devel >= 1.9.0
 BuildRequires:	pango-devel >= 1:1.1.2
-BuildRequires:	pangox-compat-devel
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -48,9 +47,9 @@ Requires:	gsettings-desktop-schemas
 Requires:	gtk-update-icon-cache
 Requires:	gvfs
 Requires:	hicolor-icon-theme
-Requires:	libexif >= 0.5.12
+Requires:	libexif >= 0.6.14
 Requires:	libxml2 >= 2.4.7
-Requires:	mate-desktop >= 1.7.1
+Requires:	mate-desktop >= 1.9.0
 Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
@@ -87,7 +86,7 @@ Summary:	Library for caja extensions
 Summary(pl.UTF-8):	Biblioteka dla rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
-Requires:	glib2 >= 1:2.28.0
+Requires:	glib2 >= 1:2.36.0
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
 Obsoletes:	mate-file-manager-extensions
@@ -106,7 +105,7 @@ Summary(pl.UTF-8):	Pliki do tworzenia rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.28.0
+Requires:	glib2-devel >= 1:2.36.0
 %{!?with_gtk3:Requires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:Requires:	gtk+3-devel >= 3.0.0}
 Obsoletes:	mate-file-manager-devel
@@ -217,6 +216,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/caja
 %dir %{_libdir}/caja/extensions-2.0
 %{_datadir}/caja
+%{_datadir}/appdata/caja.appdata.xml
 %{_datadir}/dbus-1/services/org.mate.freedesktop.FileManager1.service
 %{_datadir}/glib-2.0/schemas/org.mate.caja.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.mate.media-handling.gschema.xml
