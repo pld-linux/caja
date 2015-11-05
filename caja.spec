@@ -6,12 +6,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.10.4
+Version:	1.12.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-%{version}.tar.xz
-# Source0-md5:	b2315ca3494b097bb161fbdde1168e36
+Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
+# Source0-md5:	94ffc76d1785ecbd779dca51af75013c
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -24,7 +24,7 @@ BuildRequires:	gobject-introspection-devel >= 0.6.4
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
 BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	intltool >= 0.40.1
+BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libexif-devel >= 0.6.14
 BuildRequires:	libselinux-devel
 %{!?with_gtk3:BuildRequires:	libunique-devel >= 1.0}
