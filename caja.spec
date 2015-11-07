@@ -25,7 +25,7 @@ BuildRequires:	gobject-introspection-devel >= 0.6.4
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.50.1
-BuildRequires:	libexif-devel >= 0.6.14
+BuildRequires:	libexif-devel >= 1:0.6.14
 BuildRequires:	libselinux-devel
 %{!?with_gtk3:BuildRequires:	libunique-devel >= 1.0}
 %{?with_gtk3:BuildRequires:	libunique3-devel >= 3.0}
@@ -47,7 +47,7 @@ Requires:	gsettings-desktop-schemas
 Requires:	gtk-update-icon-cache
 Requires:	gvfs
 Requires:	hicolor-icon-theme
-Requires:	libexif >= 0.6.14
+Requires:	libexif >= 1:0.6.14
 Requires:	libxml2 >= 2.4.7
 Requires:	mate-desktop >= 1.9.0
 Requires:	mate-icon-theme
