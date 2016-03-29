@@ -6,7 +6,7 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.12.6
+Version:	1.12.7
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
