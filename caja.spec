@@ -11,7 +11,7 @@ Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	eacda2c4ec9db82c731354a6a85c7be6
+# Source0-md5:	c3d17e9c5a24c64ef72d233015de278a
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
