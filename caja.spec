@@ -6,12 +6,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.12.7
+Version:	1.14.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	c3d17e9c5a24c64ef72d233015de278a
+Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
+# Source0-md5:	017a81d1faba2d55ccaee4abc90de5dd
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -168,9 +168,6 @@ rm -rf $RPM_BUILD_ROOT
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/lib*.la
 
-# mate < 1.5 did not exist in PLD, avoid dependency on mate-conf
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/caja.convert
-
 # for external extensions
 install -d $RPM_BUILD_ROOT%{_libdir}/caja/extensions-2.0
 install -d $RPM_BUILD_ROOT%{_datadir}/caja/extensions
@@ -181,7 +178,7 @@ desktop-file-install \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
 # not supported by glibc yet
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/io
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,io}
 # update naming convention
 %{__mv} $RPM_BUILD_ROOT%{_localedir}/{sr@ije,sr@ijekavian}
 
