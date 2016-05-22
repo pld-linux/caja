@@ -6,12 +6,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.14.0
+Version:	1.14.1
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
-# Source0-md5:	017a81d1faba2d55ccaee4abc90de5dd
+# Source0-md5:	b43639c01a70c9c3cfbca9005656b073
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
