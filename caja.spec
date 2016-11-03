@@ -31,7 +31,7 @@ BuildRequires:	libselinux-devel
 %{?with_gtk3:BuildRequires:	libunique3-devel >= 3.0}
 BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	mate-common
-BuildRequires:	mate-desktop-devel >= 1.9.0
+BuildRequires:	mate-desktop-devel >= 1.15.1
 BuildRequires:	pango-devel >= 1:1.1.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
@@ -49,7 +49,7 @@ Requires:	gvfs
 Requires:	hicolor-icon-theme
 Requires:	libexif >= 1:0.6.14
 Requires:	libxml2 >= 2.4.7
-Requires:	mate-desktop >= 1.9.0
+Requires:	mate-desktop >= 1.15.1
 Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
