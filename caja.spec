@@ -1,17 +1,16 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
-%bcond_with	gtk3		# use GTK+ 3.x instead of 2.x
 
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.16.2
+Version:	1.18.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.16/%{name}-%{version}.tar.xz
-# Source0-md5:	ca4e8a3f40048204dab1980873ac7df4
+Source0:	http://pub.mate-desktop.org/releases/1.18/%{name}-%{version}.tar.xz
+# Source0-md5:	bed463a15b11623f1a718d7c2a99f79d
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -21,17 +20,14 @@ BuildRequires:	exempi-devel >= 1.99.5
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
-%{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24.0}
-%{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
+BuildRequires:	gtk+3-devel >= 3.14
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libexif-devel >= 1:0.6.14
 BuildRequires:	libselinux-devel
-%{!?with_gtk3:BuildRequires:	libunique-devel >= 1.0}
-%{?with_gtk3:BuildRequires:	libunique3-devel >= 3.0}
 BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	mate-common
-BuildRequires:	mate-desktop-devel >= 1.15.1
+BuildRequires:	mate-desktop-devel >= 1.17.3
 BuildRequires:	pango-devel >= 1:1.1.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
@@ -49,7 +45,7 @@ Requires:	gvfs
 Requires:	hicolor-icon-theme
 Requires:	libexif >= 1:0.6.14
 Requires:	libxml2 >= 2.4.7
-Requires:	mate-desktop >= 1.15.1
+Requires:	mate-desktop >= 1.17.3
 Requires:	mate-icon-theme
 Requires:	pango >= 1:1.1.2
 Requires:	shared-mime-info
@@ -87,8 +83,7 @@ Summary(pl.UTF-8):	Biblioteka dla rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	glib2 >= 1:2.36.0
-%{!?with_gtk3:Requires:	gtk+2 >= 2:2.24.0}
-%{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
+Requires:	gtk+3 >= 3.14
 Obsoletes:	mate-file-manager-extensions
 Obsoletes:	mate-file-manager-libs
 
@@ -106,8 +101,7 @@ License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.36.0
-%{!?with_gtk3:Requires:	gtk+2-devel >= 2:2.24.0}
-%{?with_gtk3:Requires:	gtk+3-devel >= 3.0.0}
+Requires:	gtk+3-devel >= 3.14
 Obsoletes:	mate-file-manager-devel
 
 %description devel
@@ -152,7 +146,6 @@ Dokumentacja API biblioteki libcaja-extension.
 	--enable-unique \
 	--disable-update-mimedb \
 	--with-gnu-ld \
-	%{?with_gtk3:--with-gtk=3.0} \
 	--with-html-dir=%{_gtkdocdir} \
 	--with-x
 
@@ -178,7 +171,7 @@ desktop-file-install \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
 # not supported by glibc yet
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,pms}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ku_IQ,pms}
 
 %find_lang caja
 
@@ -209,7 +202,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/caja-autorun-software.1*
 %{_mandir}/man1/caja-connect-server.1*
 %{_mandir}/man1/caja-file-management-properties.1*
-%attr(755,root,root) %{_libexecdir}/caja-convert-metadata
 %dir %{_libdir}/caja
 %dir %{_libdir}/caja/extensions-2.0
 %{_datadir}/caja
