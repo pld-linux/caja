@@ -24,6 +24,7 @@ BuildRequires:	gtk+3-devel >= 3.14
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libexif-devel >= 1:0.6.14
+BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libselinux-devel
 BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	mate-common
@@ -37,13 +38,14 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xz
+Requires(post,postun):	gtk-update-icon-cache
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	exempi >= 1.99.5
 Requires:	gsettings-desktop-schemas
-Requires:	gtk-update-icon-cache
 Requires:	gvfs
 Requires:	hicolor-icon-theme
 Requires:	libexif >= 1:0.6.14
+Requires:	libnotify >= 0.7.0
 Requires:	libxml2 >= 2.4.7
 Requires:	mate-desktop >= 1.17.3
 Requires:	mate-icon-theme
