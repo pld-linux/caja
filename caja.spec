@@ -5,24 +5,24 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.22.3
+Version:	1.24.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	735622a60cb50b5ed98438e3bbee402f
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	717b446792d9460fd1a2ec6acefb644a
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	exempi-devel >= 1.99.5
-BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gettext-tools >= 0.19.8
+BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
+BuildRequires:	glib2-devel >= 1:2.58.1
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 BuildRequires:	gtk+3-devel >= 3.22
 BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libexif-devel >= 1:0.6.14
 BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libselinux-devel
@@ -41,6 +41,7 @@ BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	exempi >= 1.99.5
+Requires:	gdk-pixbuf2 >= 2.36.5
 Requires:	gsettings-desktop-schemas
 Requires:	gvfs
 Requires:	hicolor-icon-theme
@@ -84,7 +85,7 @@ Summary:	Library for caja extensions
 Summary(pl.UTF-8):	Biblioteka dla rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
-Requires:	glib2 >= 1:2.50.0
+Requires:	glib2 >= 1:2.58.1
 Requires:	gtk+3 >= 3.22
 Obsoletes:	mate-file-manager-extensions
 Obsoletes:	mate-file-manager-libs
@@ -102,7 +103,7 @@ Summary(pl.UTF-8):	Pliki do tworzenia rozszerzeń caja
 License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.50.0
+Requires:	glib2-devel >= 1:2.58.1
 Requires:	gtk+3-devel >= 3.22
 Obsoletes:	mate-file-manager-devel
 
@@ -134,7 +135,6 @@ Dokumentacja API biblioteki libcaja-extension.
 %setup -q
 
 %build
-%{__intltoolize}
 %{?with_apidocs:%{__gtkdocize}}
 %{__libtoolize}
 %{__aclocal}
