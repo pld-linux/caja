@@ -121,9 +121,7 @@ Summary(pl.UTF-8):	Dokumentacja API biblioteki libcaja-extension
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	mate-file-manager-apidocs
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 libcaja-extension API documentation.
