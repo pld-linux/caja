@@ -5,12 +5,12 @@
 Summary:	File manager for MATE
 Summary(pl.UTF-8):	Zarządca plików dla środowiska MATE
 Name:		caja
-Version:	1.24.1
+Version:	1.26.0
 Release:	1
 License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
-Source0:	https://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
-# Source0-md5:	12b6615a22e26bb2f272abdb7f82d8bf
+Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
+# Source0-md5:	21f042e314fdafd831c202332ad8f29c
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
@@ -33,6 +33,7 @@ BuildRequires:	pango-devel >= 1:1.1.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -143,11 +144,9 @@ Dokumentacja API biblioteki libcaja-extension.
 	--disable-icon-update \
 	--disable-schemas-compile \
 	--disable-silent-rules \
-	--enable-unique \
 	--disable-update-mimedb \
 	--with-gnu-ld \
-	--with-html-dir=%{_gtkdocdir} \
-	--with-x
+	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
 
