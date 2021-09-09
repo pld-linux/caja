@@ -11,7 +11,7 @@ License:	GPL v2+ and LGPL v2+
 Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
 # Source0-md5:	21f042e314fdafd831c202332ad8f29c
-URL:		http://wiki.mate-desktop.org/mate-file-manager
+URL:		https://wiki.mate-desktop.org/mate-desktop/applications/caja/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-gobject-devel
@@ -32,6 +32,8 @@ BuildRequires:	mate-desktop-devel >= 1.17.3
 BuildRequires:	pango-devel >= 1:1.1.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
+BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libSM-devel
@@ -62,7 +64,7 @@ Suggests:	caja-extension-sendto
 Suggests:	caja-extension-share
 Suggests:	caja-extension-shares
 Suggests:	mate-backgrounds
-Obsoletes:	mate-file-manager
+Obsoletes:	mate-file-manager < 1.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -88,8 +90,8 @@ License:	LGPL v2+
 Group:		Development/Libraries
 Requires:	glib2 >= 1:2.58.1
 Requires:	gtk+3 >= 3.22
-Obsoletes:	mate-file-manager-extensions
-Obsoletes:	mate-file-manager-libs
+Obsoletes:	mate-file-manager-extensions < 1.8.0
+Obsoletes:	mate-file-manager-libs < 1.8.0
 
 %description libs
 This package provides the library used by Caja view extensions.
@@ -106,7 +108,7 @@ Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.58.1
 Requires:	gtk+3-devel >= 3.22
-Obsoletes:	mate-file-manager-devel
+Obsoletes:	mate-file-manager-devel < 1.8.0
 
 %description devel
 This package provides the header files needed for developing Caja
@@ -121,7 +123,7 @@ Summary:	libcaja-extension API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libcaja-extension
 Group:		Documentation
 Requires:	gtk-doc-common
-Obsoletes:	mate-file-manager-apidocs
+Obsoletes:	mate-file-manager-apidocs < 1.8.0
 BuildArch:	noarch
 
 %description apidocs
