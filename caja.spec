@@ -13,6 +13,7 @@ Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
 # Source0-md5:	21f042e314fdafd831c202332ad8f29c
 URL:		https://wiki.mate-desktop.org/mate-desktop/applications/caja/
 BuildRequires:	autoconf >= 2.54
+BuildRequires:	autoconf-archive
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-gobject-devel
 BuildRequires:	desktop-file-utils
