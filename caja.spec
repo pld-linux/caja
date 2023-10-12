@@ -42,6 +42,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xz
+Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	exempi >= 1.99.5
@@ -183,16 +184,18 @@ rm -rf $RPM_BUILD_ROOT
 %update_mime_database
 %update_icon_cache hicolor
 %glib_compile_schemas
+%update_desktop_database_post
 
 %postun
 %update_mime_database
 %update_icon_cache hicolor
 %glib_compile_schemas
+%update_desktop_database_postun
 
 %post	libs -p /sbin/ldconfig
 %postun	libs -p /sbin/ldconfig
 
-%files  -f caja.lang
+%files -f caja.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/caja
